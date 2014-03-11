@@ -30,7 +30,7 @@
 			});
 
 			editor.ui.addButton && editor.ui.addButton( 'acClose', {
-				label: 'Close edit mode (Saves Automatically)',
+				label: ac.ck.str_Close_edit_mode,//'Close edit mode (Saves Automatically)',
 				command: 'acClose',
 				toolbar: 'links,10'
 			});

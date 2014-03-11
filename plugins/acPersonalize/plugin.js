@@ -21,7 +21,7 @@
 			});
 
 			editor.ui.addButton && editor.ui.addButton( 'acPersonalize', {
-				label: 'Personalize',
+				label: ac.ck.str_Personalize,//'Personalize',
 				command: 'acPersonalize',
 				toolbar: 'links,10'
 			});
