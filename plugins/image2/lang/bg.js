@@ -1,11 +1,12 @@
 ﻿/*
-Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang( 'image2', 'bg', {
 	alt: 'Алтернативен текст',
 	btnUpload: 'Изпрати я на сървъра',
 	captioned: 'Captioned image', // MISSING
+	captionPlaceholder: 'Caption', // MISSING
 	infoTab: 'Инфо за снимка',
 	lockRatio: 'Заключване на съотношението',
 	menu: 'Настройки за снимка',

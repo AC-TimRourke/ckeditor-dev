@@ -1,11 +1,12 @@
 ﻿/*
-Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang( 'image2', 'lt', {
 	alt: 'Alternatyvus Tekstas',
 	btnUpload: 'Siųsti į serverį',
 	captioned: 'Captioned image', // MISSING
+	captionPlaceholder: 'Caption', // MISSING
 	infoTab: 'Vaizdo informacija',
 	lockRatio: 'Išlaikyti proporciją',
 	menu: 'Vaizdo savybės',

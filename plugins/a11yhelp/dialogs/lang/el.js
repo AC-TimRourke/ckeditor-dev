@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -82,66 +82,66 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'el', {
 		]
 	}
 	],
-	backspace: 'BACKSPACE', // MISSING
-	tab: 'TAB', // MISSING
-	enter: 'ENTER', // MISSING
-	shift: 'SHIFT', // MISSING
-	ctrl: 'CTRL', // MISSING
-	alt: 'ALT', // MISSING
-	pause: 'PAUSE', // MISSING
-	capslock: 'CAPSLOCK', // MISSING
-	escape: 'ESCAPE', // MISSING
-	pageUp: 'PAGE UP', // MISSING
-	pageDown: 'PAGE DOWN', // MISSING
-	end: 'END', // MISSING
-	home: 'HOME', // MISSING
-	leftArrow: 'LEFT ARROW', // MISSING
-	upArrow: 'UP ARROW', // MISSING
-	rightArrow: 'RIGHT ARROW', // MISSING
-	downArrow: 'DOWN ARROW', // MISSING
-	insert: 'INSERT', // MISSING
-	'delete': 'DELETE', // MISSING
-	leftWindowKey: 'LEFT WINDOW KEY', // MISSING
-	rightWindowKey: 'RIGHT WINDOW KEY', // MISSING
-	selectKey: 'SELECT KEY', // MISSING
-	numpad0: 'NUMPAD 0', // MISSING
-	numpad1: 'NUMPAD 1', // MISSING
-	numpad2: 'NUMPAD 2', // MISSING
-	numpad3: 'NUMPAD 3', // MISSING
-	numpad4: 'NUMPAD 4', // MISSING
-	numpad5: 'NUMPAD 5', // MISSING
-	numpad6: 'NUMPAD 6', // MISSING
-	numpad7: 'NUMPAD 7', // MISSING
-	numpad8: 'NUMPAD 8', // MISSING
-	numpad9: 'NUMPAD 9', // MISSING
-	multiply: 'MULTIPLY', // MISSING
-	add: 'ADD', // MISSING
-	subtract: 'SUBTRACT', // MISSING
-	decimalPoint: 'DECIMAL POINT', // MISSING
-	divide: 'DIVIDE', // MISSING
-	f1: 'F1', // MISSING
-	f2: 'F2', // MISSING
-	f3: 'F3', // MISSING
-	f4: 'F4', // MISSING
-	f5: 'F5', // MISSING
-	f6: 'F6', // MISSING
-	f7: 'F7', // MISSING
-	f8: 'F8', // MISSING
-	f9: 'F9', // MISSING
-	f10: 'F10', // MISSING
-	f11: 'F11', // MISSING
-	f12: 'F12', // MISSING
-	numLock: 'NUM LOCK', // MISSING
-	scrollLock: 'SCROLL LOCK', // MISSING
-	semiColon: 'SEMI-COLON', // MISSING
-	equalSign: 'EQUAL SIGN', // MISSING
-	comma: 'COMMA', // MISSING
-	dash: 'DASH', // MISSING
-	period: 'PERIOD', // MISSING
-	forwardSlash: 'FORWARD SLASH', // MISSING
-	graveAccent: 'GRAVE ACCENT', // MISSING
-	openBracket: 'OPEN BRACKET', // MISSING
-	backSlash: 'BACK SLASH', // MISSING
-	closeBracket: 'CLOSE BRACKET', // MISSING
-	singleQuote: 'SINGLE QUOTE' // MISSING
+	backspace: 'Backspace',
+	tab: 'Tab',
+	enter: 'Enter',
+	shift: 'Shift',
+	ctrl: 'Ctrl',
+	alt: 'Alt',
+	pause: 'Pause',
+	capslock: 'Caps Lock',
+	escape: 'Escape',
+	pageUp: 'Page Up',
+	pageDown: 'Page Down',
+	end: 'End',
+	home: 'Home',
+	leftArrow: 'Αριστερό Βέλος',
+	upArrow: 'Πάνω Βέλος',
+	rightArrow: 'Δεξί Βέλος',
+	downArrow: 'Κάτω Βέλος',
+	insert: 'Insert ',
+	'delete': 'Delete',
+	leftWindowKey: 'Αριστερό Πλήκτρο Windows',
+	rightWindowKey: 'Δεξί Πλήκτρο Windows',
+	selectKey: 'Πλήκτρο Select',
+	numpad0: 'Αριθμητικό πληκτρολόγιο 0',
+	numpad1: 'Αριθμητικό Πληκτρολόγιο 1',
+	numpad2: 'Αριθμητικό πληκτρολόγιο 2',
+	numpad3: 'Αριθμητικό πληκτρολόγιο 3',
+	numpad4: 'Αριθμητικό πληκτρολόγιο 4',
+	numpad5: 'Αριθμητικό πληκτρολόγιο 5',
+	numpad6: 'Αριθμητικό πληκτρολόγιο 6',
+	numpad7: 'Αριθμητικό πληκτρολόγιο 7',
+	numpad8: 'Αριθμητικό πληκτρολόγιο 8',
+	numpad9: 'Αριθμητικό πληκτρολόγιο 9',
+	multiply: 'Πολλαπλασιασμός',
+	add: 'Πρόσθεση',
+	subtract: 'Αφαίρεση',
+	decimalPoint: 'Υποδιαστολή',
+	divide: 'Διαίρεση',
+	f1: 'F1',
+	f2: 'F2',
+	f3: 'F3',
+	f4: 'F4',
+	f5: 'F5',
+	f6: '6',
+	f7: '7',
+	f8: 'F8',
+	f9: 'F9',
+	f10: 'F10',
+	f11: 'F11',
+	f12: 'F12',
+	numLock: 'Num Lock',
+	scrollLock: 'Scroll Lock',
+	semiColon: 'Ερωτηματικό',
+	equalSign: 'Σύμβολο Ισότητας',
+	comma: 'Κόμμα',
+	dash: 'Παύλα',
+	period: 'Τελεία',
+	forwardSlash: 'Κάθετος',
+	graveAccent: 'Βαρεία',
+	openBracket: 'Άνοιγμα Παρένθεσης',
+	backSlash: 'Ανάστροφη Κάθετος',
+	closeBracket: 'Κλείσιμο Παρένθεσης',
+	singleQuote: 'Απόστροφος'
 } );

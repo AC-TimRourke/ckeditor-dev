@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -30,8 +30,8 @@
 
 	// Some browsers don't cancel key events in the keydown but in the
 	// keypress.
-	// TODO: Check if really needed for Gecko+Mac.
-	if ( CKEDITOR.env.opera || ( CKEDITOR.env.gecko && CKEDITOR.env.mac ) )
+	// TODO: Check if really needed.
+	if ( CKEDITOR.env.gecko && CKEDITOR.env.mac )
 		extra += ' onkeypress="return false;"';
 
 	// With Firefox, we need to force the button to redraw, otherwise it
@@ -45,7 +45,6 @@
 		' tabindex="-1"' +
 		' class="cke_path_item"' +
 		' title="{label}"' +
-		( ( CKEDITOR.env.gecko && CKEDITOR.env.version < 10900 ) ? ' onfocus="event.preventBubble();"' : '' ) +
 		extra +
 		' hidefocus="true" ' +
 		' onkeydown="return CKEDITOR.tools.callFunction({keyDownFn},{index}, event );"' +
@@ -55,7 +54,9 @@
 		'</a>' );
 
 	CKEDITOR.plugins.add( 'elementspath', {
-		lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
+		// jscs:disable maximumLineLength
+		lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,tt,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
+		// jscs:enable maximumLineLength
 		init: function( editor ) {
 			editor._.elementsPath = {
 				idBase: 'cke_elementspath_' + CKEDITOR.tools.getNextNumber() + '_',
@@ -95,8 +96,9 @@
 				var range = editor.createRange();
 				range.selectNodeContents( element );
 				range.select();
-			} else
+			} else {
 				editor.getSelection().selectElement( element );
+			}
 
 			// It is important to focus() *after* the above selection
 			// manipulation, otherwise Firefox will have troubles. #10119
@@ -142,11 +144,8 @@
 				return true;
 			} );
 
-		editor.on( 'selectionChange', function( ev ) {
-			var env = CKEDITOR.env,
-				editable = editor.editable(),
-				selection = ev.data.selection,
-				html = [],
+		editor.on( 'selectionChange', function() {
+			var html = [],
 				elementsList = elementsPath.list = [],
 				namesList = [],
 				filters = elementsPath.filters,
@@ -198,7 +197,7 @@
 						id: idBase + index,
 						label: label,
 						text: name,
-						jsTitle: 'javascript:void(\'' + name + '\')',
+						jsTitle: 'javascript:void(\'' + name + '\')', // jshint ignore:line
 						index: index,
 						keyDownFn: onKeyDownHandler,
 						clickFn: onClickHanlder

@@ -1,5 +1,5 @@
 /**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -74,8 +74,9 @@
 
 				return userGuard( node, movingOut );
 			};
-		} else
+		} else {
 			guard = stopGuard;
+		}
 
 		if ( this.current )
 			node = this.current[ getSourceNodeFn ]( false, type, guard );
@@ -109,8 +110,9 @@
 			if ( !this.evaluator || this.evaluator( node ) !== false ) {
 				if ( !breakOnFalse )
 					return node;
-			} else if ( breakOnFalse && this.evaluator )
+			} else if ( breakOnFalse && this.evaluator ) {
 				return false;
+			}
 
 			node = node[ getSourceNodeFn ]( false, type, guard );
 		}
@@ -300,9 +302,11 @@
 	// table-row-group, table-header-group, table-footer-group, table-row,
 	// table-column-group, table-column, table-cell, table-caption, or whose node
 	// name is hr, br (when enterMode is br only) is a block boundary.
-	var blockBoundaryDisplayMatch = { block: 1, 'list-item': 1, table: 1, 'table-row-group': 1,
+	var blockBoundaryDisplayMatch = {
+			block: 1, 'list-item': 1, table: 1, 'table-row-group': 1,
 			'table-header-group': 1, 'table-footer-group': 1, 'table-row': 1, 'table-column-group': 1,
-			'table-column': 1, 'table-cell': 1, 'table-caption': 1 },
+			'table-column': 1, 'table-cell': 1, 'table-caption': 1
+		},
 		outOfFlowPositions = { absolute: 1, fixed: 1 };
 
 	/**
@@ -334,7 +338,7 @@
 	 * @returns {Function}
 	 */
 	CKEDITOR.dom.walker.blockBoundary = function( customNodeNames ) {
-		return function( node, type ) {
+		return function( node ) {
 			return !( node.type == CKEDITOR.NODE_ELEMENT && node.isBlockBoundary( customNodeNames ) );
 		};
 	};
@@ -394,14 +398,17 @@
 	};
 
 	/**
-	 * Returns a function which checks whether the node is invisible in wysiwyg mode.
+	 * Returns a function which checks whether the node is invisible in the WYSIWYG mode.
 	 *
 	 * @static
 	 * @param {Boolean} [isReject=false]
 	 * @returns {Function}
 	 */
 	CKEDITOR.dom.walker.invisible = function( isReject ) {
-		var whitespace = CKEDITOR.dom.walker.whitespaces();
+		var whitespace = CKEDITOR.dom.walker.whitespaces(),
+			// #12221 (Chrome) plus #11111 (Safari).
+			offsetWidth0 = CKEDITOR.env.webkit ? 1 : 0;
+
 		return function( node ) {
 			var invisible;
 
@@ -412,12 +419,11 @@
 				if ( node.type == CKEDITOR.NODE_TEXT )
 					node = node.getParent();
 
-			// Nodes that take no spaces in wysiwyg:
-			// 1. White-spaces but not including NBSP;
-			// 2. Empty inline elements, e.g. <b></b> we're checking here
-			// 'offsetHeight' instead of 'offsetWidth' for properly excluding
-			// all sorts of empty paragraph, e.g. <br />.
-				invisible = !node.$.offsetHeight;
+				// Nodes that take no spaces in wysiwyg:
+				// 1. White-spaces but not including NBSP.
+				// 2. Empty inline elements, e.g. <b></b>.
+				// 3. <br> elements (bogus, surrounded by text) (#12423).
+				invisible = node.$.offsetWidth <= offsetWidth0;
 			}
 
 			return !!( isReject ^ invisible );
@@ -556,8 +562,10 @@
 
 		if ( node.type == CKEDITOR.NODE_ELEMENT ) {
 			// All inline and non-editable elements are valid editable places.
+			// Note: the <hr> is currently the only element in CKEDITOR.dtd.$empty and CKEDITOR.dtd.$block,
+			// but generally speaking we need an intersection of these two sets.
 			// Note: non-editable block has to be treated differently (should be selected entirely).
-			if ( node.is( CKEDITOR.dtd.$inline ) || node.getAttribute( 'contenteditable' ) == 'false' )
+			if ( node.is( CKEDITOR.dtd.$inline ) || node.is( 'hr' ) || node.getAttribute( 'contenteditable' ) == 'false' )
 				return true;
 
 			// Empty blocks are editable on IE.
@@ -577,6 +585,8 @@
 	 *
 	 * * text nodes (but not whitespaces),
 	 * * inline elements,
+	 * * intersection of {@link CKEDITOR.dtd#$empty} and {@link CKEDITOR.dtd#$block} (currenly
+	 * it's only `<hr>`),
 	 * * non-editable blocks (special case - such blocks cannot be containers nor
 	 * siblings, they need to be selected entirely),
 	 * * empty blocks which can contain text (IE only).
@@ -605,7 +615,7 @@
 		do {
 			tail = tail.getPreviousSourceNode();
 		}
-		while ( toSkip( tail ) )
+		while ( toSkip( tail ) );
 
 		if ( tail && ( CKEDITOR.env.needsBrFiller ? tail.is && tail.is( 'br' ) : tail.getText && tailNbspRegex.test( tail.getText() ) ) )
 			return tail;

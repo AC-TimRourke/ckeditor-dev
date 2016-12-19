@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -43,6 +43,18 @@ CKEDITOR.htmlParser.fragment = function() {
 
 	// Dtd of the fragment element, basically it accept anything except for intermediate structure, e.g. orphan <li>.
 	var rootDtd = CKEDITOR.tools.extend( {}, { html: 1 }, CKEDITOR.dtd.html, CKEDITOR.dtd.body, CKEDITOR.dtd.head, { style: 1, script: 1 } );
+
+	// Which element to create when encountered not allowed content.
+	var structureFixes = {
+		ul: 'li',
+		ol: 'li',
+		dl: 'dd',
+		table: 'tbody',
+		tbody: 'tr',
+		thead: 'tr',
+		tfoot: 'tr',
+		tr: 'td'
+	};
 
 	function isRemoveEmpty( node ) {
 		// Keep marked element event if it is empty.
@@ -190,8 +202,9 @@ CKEDITOR.htmlParser.fragment = function() {
 			if ( element.returnPoint ) {
 				currentNode = element.returnPoint;
 				delete element.returnPoint;
-			} else
+			} else {
 				currentNode = moveCurrent ? target : savedCurrent;
+			}
 		}
 
 		// Auto paragraphing should happen when inline content enters the root element.
@@ -199,9 +212,9 @@ CKEDITOR.htmlParser.fragment = function() {
 
 			// Check for parent that can contain block.
 			if ( ( parent == root || parent.name == 'body' ) && fixingBlock &&
-					 ( !parent.name || CKEDITOR.dtd[ parent.name ][ fixingBlock ] ) )
-			{
+					( !parent.name || CKEDITOR.dtd[ parent.name ][ fixingBlock ] ) ) {
 				var name, realName;
+
 				if ( node.attributes && ( realName = node.attributes[ 'data-cke-real-element-type' ] ) )
 					name = realName;
 				else
@@ -209,9 +222,9 @@ CKEDITOR.htmlParser.fragment = function() {
 
 				// Text node, inline elements are subjected, except for <script>/<style>.
 				return name && name in CKEDITOR.dtd.$inline &&
-				       !( name in CKEDITOR.dtd.head ) &&
-				       !node.isOrphan ||
-				       node.type == CKEDITOR.NODE_TEXT;
+					!( name in CKEDITOR.dtd.head ) &&
+					!node.isOrphan ||
+					node.type == CKEDITOR.NODE_TEXT;
 			}
 		}
 
@@ -245,8 +258,9 @@ CKEDITOR.htmlParser.fragment = function() {
 			else if ( tagName == 'br' && inPre ) {
 				currentNode.add( new CKEDITOR.htmlParser.text( '\n' ) );
 				return;
-			} else if ( tagName == 'textarea' )
+			} else if ( tagName == 'textarea' ) {
 				inTextarea = true;
+			}
 
 			if ( tagName == 'br' ) {
 				pendingBRs.push( element );
@@ -311,8 +325,9 @@ CKEDITOR.htmlParser.fragment = function() {
 							break;
 						}
 					}
-				} else
+				} else {
 					break;
+				}
 			}
 
 			checkPending( tagName );
@@ -396,7 +411,7 @@ CKEDITOR.htmlParser.fragment = function() {
 
 			// Fix orphan text in list/table. (#8540) (#8870)
 			if ( !inTextarea && !currentDtd[ '#' ] && currentName in nonBreakingBlocks ) {
-				parser.onTagOpen( currentName in listBlocks ? 'li' : currentName == 'dl' ? 'dd' : currentName == 'table' ? 'tr' : currentName == 'tr' ? 'td' : '' );
+				parser.onTagOpen( structureFixes[ currentName ] || '' );
 				parser.onText( text );
 				return;
 			}

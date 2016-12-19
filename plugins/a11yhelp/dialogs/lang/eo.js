@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -68,12 +68,12 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'eo', {
 			legend: 'Premu ${toolbarCollapse}'
 		},
 			{
-			name: ' Access previous focus space command', // MISSING
-			legend: 'Press ${accessPreviousSpace} to access the closest unreachable focus space before the caret, for example: two adjacent HR elements. Repeat the key combination to reach distant focus spaces.' // MISSING
+			name: 'Komando por atingi la antaŭan fokusan spacon',
+			legend: 'Press ${accessPreviousSpace} por atingi la plej proksiman neatingeblan fokusan spacon antaŭ la kursoro, ekzemple : du kuntuŝiĝajn HR elementojn. Ripetu la klavkombinaĵon por atingi malproksimajn fokusajn spacojn.'
 		},
 			{
-			name: ' Access next focus space command', // MISSING
-			legend: 'Press ${accessNextSpace} to access the closest unreachable focus space after the caret, for example: two adjacent HR elements. Repeat the key combination to reach distant focus spaces.' // MISSING
+			name: 'Komando por atingi la sekvan fokusan spacon',
+			legend: 'Press ${accessNextSpace} por atingi la plej proksiman neatingeblan fokusan spacon post la kursoro, ekzemple : du kuntuŝiĝajn HR elementojn. Ripetu la klavkombinajôn por atingi malproksimajn fokusajn spacojn'
 		},
 			{
 			name: 'Helpilo pri atingeblo',
@@ -82,66 +82,66 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'eo', {
 		]
 	}
 	],
-	backspace: 'BACKSPACE', // MISSING
-	tab: 'TAB', // MISSING
-	enter: 'ENTER', // MISSING
-	shift: 'SHIFT', // MISSING
-	ctrl: 'CTRL', // MISSING
-	alt: 'ALT', // MISSING
-	pause: 'PAUSE', // MISSING
-	capslock: 'CAPSLOCK', // MISSING
-	escape: 'ESCAPE', // MISSING
-	pageUp: 'PAGE UP', // MISSING
-	pageDown: 'PAGE DOWN', // MISSING
-	end: 'END', // MISSING
-	home: 'HOME', // MISSING
-	leftArrow: 'LEFT ARROW', // MISSING
-	upArrow: 'UP ARROW', // MISSING
-	rightArrow: 'RIGHT ARROW', // MISSING
-	downArrow: 'DOWN ARROW', // MISSING
-	insert: 'INSERT', // MISSING
-	'delete': 'DELETE', // MISSING
-	leftWindowKey: 'LEFT WINDOW KEY', // MISSING
-	rightWindowKey: 'RIGHT WINDOW KEY', // MISSING
-	selectKey: 'SELECT KEY', // MISSING
-	numpad0: 'NUMPAD 0', // MISSING
-	numpad1: 'NUMPAD 1', // MISSING
-	numpad2: 'NUMPAD 2', // MISSING
-	numpad3: 'NUMPAD 3', // MISSING
-	numpad4: 'NUMPAD 4', // MISSING
-	numpad5: 'NUMPAD 5', // MISSING
-	numpad6: 'NUMPAD 6', // MISSING
-	numpad7: 'NUMPAD 7', // MISSING
-	numpad8: 'NUMPAD 8', // MISSING
-	numpad9: 'NUMPAD 9', // MISSING
-	multiply: 'MULTIPLY', // MISSING
-	add: 'ADD', // MISSING
-	subtract: 'SUBTRACT', // MISSING
-	decimalPoint: 'DECIMAL POINT', // MISSING
-	divide: 'DIVIDE', // MISSING
-	f1: 'F1', // MISSING
-	f2: 'F2', // MISSING
-	f3: 'F3', // MISSING
-	f4: 'F4', // MISSING
-	f5: 'F5', // MISSING
-	f6: 'F6', // MISSING
-	f7: 'F7', // MISSING
-	f8: 'F8', // MISSING
-	f9: 'F9', // MISSING
-	f10: 'F10', // MISSING
-	f11: 'F11', // MISSING
-	f12: 'F12', // MISSING
-	numLock: 'NUM LOCK', // MISSING
-	scrollLock: 'SCROLL LOCK', // MISSING
-	semiColon: 'SEMI-COLON', // MISSING
-	equalSign: 'EQUAL SIGN', // MISSING
-	comma: 'COMMA', // MISSING
-	dash: 'DASH', // MISSING
-	period: 'PERIOD', // MISSING
-	forwardSlash: 'FORWARD SLASH', // MISSING
-	graveAccent: 'GRAVE ACCENT', // MISSING
-	openBracket: 'OPEN BRACKET', // MISSING
-	backSlash: 'BACK SLASH', // MISSING
-	closeBracket: 'CLOSE BRACKET', // MISSING
-	singleQuote: 'SINGLE QUOTE' // MISSING
+	backspace: 'Retropaŝo',
+	tab: 'Tabo',
+	enter: 'Enigi',
+	shift: 'Registrumo',
+	ctrl: 'Stirklavo',
+	alt: 'Alt-klavo',
+	pause: 'Paŭzo',
+	capslock: 'Majuskla baskulo',
+	escape: 'Eskapa klavo',
+	pageUp: 'Antaŭa Paĝo',
+	pageDown: 'Sekva Paĝo',
+	end: 'Fino',
+	home: 'Hejmo',
+	leftArrow: 'Sago Maldekstren',
+	upArrow: 'Sago Supren',
+	rightArrow: 'Sago Dekstren',
+	downArrow: 'Sago Suben',
+	insert: 'Enmeti',
+	'delete': 'Forigi',
+	leftWindowKey: 'Maldekstra Windows-klavo',
+	rightWindowKey: 'Dekstra Windows-klavo',
+	selectKey: 'Selektklavo',
+	numpad0: 'Nombra Klavaro 0',
+	numpad1: 'Nombra Klavaro 1',
+	numpad2: 'Nombra Klavaro 2',
+	numpad3: 'Nombra Klavaro 3',
+	numpad4: 'Nombra Klavaro 4',
+	numpad5: 'Nombra Klavaro 5',
+	numpad6: 'Nombra Klavaro 6',
+	numpad7: 'Nombra Klavaro 7',
+	numpad8: 'Nombra Klavaro 8',
+	numpad9: 'Nombra Klavaro 9',
+	multiply: 'Obligi',
+	add: 'Almeti',
+	subtract: 'Subtrahi',
+	decimalPoint: 'Dekuma Punkto',
+	divide: 'Dividi',
+	f1: 'F1',
+	f2: 'F2',
+	f3: 'F3',
+	f4: 'F4',
+	f5: 'F5',
+	f6: 'F6',
+	f7: 'F7',
+	f8: 'F8',
+	f9: 'F9',
+	f10: 'F10',
+	f11: 'F11',
+	f12: 'F12',
+	numLock: 'Nombra Baskulo',
+	scrollLock: 'Ruluma Baskulo',
+	semiColon: 'Punktokomo',
+	equalSign: 'Egalsigno',
+	comma: 'Komo',
+	dash: 'Haltostreko',
+	period: 'Punkto',
+	forwardSlash: 'Oblikvo',
+	graveAccent: 'Malakuto',
+	openBracket: 'Malferma Krampo',
+	backSlash: 'Retroklino',
+	closeBracket: 'Ferma Krampo',
+	singleQuote: 'Citilo'
 } );

@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -58,7 +58,7 @@
 
 			// (#9907) Allow data manipulation before preview is displayed.
 			// Also don't open the preview window when event cancelled.
-			if ( !editor.fire( 'contentPreview', eventData = { dataValue: sHTML } ) )
+			if ( editor.fire( 'contentPreview', eventData = { dataValue: sHTML } ) === false )
 				return false;
 
 			var sOpenUrl = '',
@@ -66,7 +66,7 @@
 
 			if ( CKEDITOR.env.ie ) {
 				window._cke_htmlToLoad = eventData.dataValue;
-				ieLocation = 'javascript:void( (function(){' +
+				ieLocation = 'javascript:void( (function(){' + // jshint ignore:line
 					'document.open();' +
 					// Support for custom document.domain.
 					// Strip comments and replace parent with window.opener in the function body.
@@ -83,13 +83,15 @@
 			// anchors will work properly on it. (#9047)
 			if ( CKEDITOR.env.gecko ) {
 				window._cke_htmlToLoad = eventData.dataValue;
-				sOpenUrl = pluginPath + 'preview.html';
+				sOpenUrl = CKEDITOR.getUrl( pluginPath + 'preview.html' );
 			}
 
 			var oWindow = window.open( sOpenUrl, null, 'toolbar=yes,location=no,status=yes,menubar=yes,scrollbars=yes,resizable=yes,width=' +
 				iWidth + ',height=' + iHeight + ',left=' + iLeft );
 
-			if ( CKEDITOR.env.ie )
+			// For IE we want to assign whole js stored in ieLocation, but in case of
+			// popup blocker activation oWindow variable will be null. (#11597)
+			if ( CKEDITOR.env.ie && oWindow )
 				oWindow.location = ieLocation;
 
 			if ( !CKEDITOR.env.ie && !CKEDITOR.env.gecko ) {
@@ -107,7 +109,9 @@
 
 	// Register a plugin named "preview".
 	CKEDITOR.plugins.add( pluginName, {
-		lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
+		// jscs:disable maximumLineLength
+		lang: 'af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,tt,ug,uk,vi,zh,zh-cn', // %REMOVE_LINE_CORE%
+		// jscs:enable maximumLineLength
 		icons: 'preview,preview-rtl', // %REMOVE_LINE_CORE%
 		hidpi: true, // %REMOVE_LINE_CORE%
 		init: function( editor ) {

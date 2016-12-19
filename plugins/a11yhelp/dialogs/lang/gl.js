@@ -1,5 +1,5 @@
 ﻿/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
@@ -82,66 +82,66 @@ CKEDITOR.plugins.setLang( 'a11yhelp', 'gl', {
 		]
 	}
 	],
-	backspace: 'BACKSPACE', // MISSING
-	tab: 'TAB', // MISSING
-	enter: 'ENTER', // MISSING
-	shift: 'SHIFT', // MISSING
-	ctrl: 'CTRL', // MISSING
-	alt: 'ALT', // MISSING
-	pause: 'PAUSE', // MISSING
-	capslock: 'CAPSLOCK', // MISSING
-	escape: 'ESCAPE', // MISSING
-	pageUp: 'PAGE UP', // MISSING
-	pageDown: 'PAGE DOWN', // MISSING
-	end: 'END', // MISSING
-	home: 'HOME', // MISSING
-	leftArrow: 'LEFT ARROW', // MISSING
-	upArrow: 'UP ARROW', // MISSING
-	rightArrow: 'RIGHT ARROW', // MISSING
-	downArrow: 'DOWN ARROW', // MISSING
-	insert: 'INSERT', // MISSING
-	'delete': 'DELETE', // MISSING
-	leftWindowKey: 'LEFT WINDOW KEY', // MISSING
-	rightWindowKey: 'RIGHT WINDOW KEY', // MISSING
-	selectKey: 'SELECT KEY', // MISSING
-	numpad0: 'NUMPAD 0', // MISSING
-	numpad1: 'NUMPAD 1', // MISSING
-	numpad2: 'NUMPAD 2', // MISSING
-	numpad3: 'NUMPAD 3', // MISSING
-	numpad4: 'NUMPAD 4', // MISSING
-	numpad5: 'NUMPAD 5', // MISSING
-	numpad6: 'NUMPAD 6', // MISSING
-	numpad7: 'NUMPAD 7', // MISSING
-	numpad8: 'NUMPAD 8', // MISSING
-	numpad9: 'NUMPAD 9', // MISSING
-	multiply: 'MULTIPLY', // MISSING
-	add: 'ADD', // MISSING
-	subtract: 'SUBTRACT', // MISSING
-	decimalPoint: 'DECIMAL POINT', // MISSING
-	divide: 'DIVIDE', // MISSING
-	f1: 'F1', // MISSING
-	f2: 'F2', // MISSING
-	f3: 'F3', // MISSING
-	f4: 'F4', // MISSING
-	f5: 'F5', // MISSING
-	f6: 'F6', // MISSING
-	f7: 'F7', // MISSING
-	f8: 'F8', // MISSING
-	f9: 'F9', // MISSING
-	f10: 'F10', // MISSING
-	f11: 'F11', // MISSING
-	f12: 'F12', // MISSING
-	numLock: 'NUM LOCK', // MISSING
-	scrollLock: 'SCROLL LOCK', // MISSING
-	semiColon: 'SEMI-COLON', // MISSING
-	equalSign: 'EQUAL SIGN', // MISSING
-	comma: 'COMMA', // MISSING
-	dash: 'DASH', // MISSING
-	period: 'PERIOD', // MISSING
-	forwardSlash: 'FORWARD SLASH', // MISSING
-	graveAccent: 'GRAVE ACCENT', // MISSING
-	openBracket: 'OPEN BRACKET', // MISSING
-	backSlash: 'BACK SLASH', // MISSING
-	closeBracket: 'CLOSE BRACKET', // MISSING
-	singleQuote: 'SINGLE QUOTE' // MISSING
+	backspace: 'Ir atrás',
+	tab: 'Tabulador',
+	enter: 'Intro',
+	shift: 'Maiús',
+	ctrl: 'Ctrl',
+	alt: 'Alt',
+	pause: 'Pausa',
+	capslock: 'Bloq. Maiús',
+	escape: 'Escape',
+	pageUp: 'Páxina arriba',
+	pageDown: 'Páxina abaixo',
+	end: 'Fin',
+	home: 'Inicio',
+	leftArrow: 'Frecha esquerda',
+	upArrow: 'Frecha arriba',
+	rightArrow: 'Frecha dereita',
+	downArrow: 'Frecha abaixo',
+	insert: 'Inserir',
+	'delete': 'Supr',
+	leftWindowKey: 'Tecla Windows esquerda',
+	rightWindowKey: 'Tecla Windows dereita',
+	selectKey: 'Escolla a tecla',
+	numpad0: 'Tec. numérico 0',
+	numpad1: 'Tec. numérico 1',
+	numpad2: 'Tec. numérico 2',
+	numpad3: 'Tec. numérico 3',
+	numpad4: 'Tec. numérico 4',
+	numpad5: 'Tec. numérico 5',
+	numpad6: 'Tec. numérico 6',
+	numpad7: 'Tec. numérico 7',
+	numpad8: 'Tec. numérico 8',
+	numpad9: 'Tec. numérico 9',
+	multiply: 'Multiplicar',
+	add: 'Sumar',
+	subtract: 'Restar',
+	decimalPoint: 'Punto decimal',
+	divide: 'Dividir',
+	f1: 'F1',
+	f2: 'F2',
+	f3: 'F3',
+	f4: 'F4',
+	f5: 'F5',
+	f6: 'F6',
+	f7: 'F7',
+	f8: 'F8',
+	f9: 'F9',
+	f10: 'F10',
+	f11: 'F11',
+	f12: 'F12',
+	numLock: 'Bloq. num.',
+	scrollLock: 'Bloq. despraz.',
+	semiColon: 'Punto e coma',
+	equalSign: 'Signo igual',
+	comma: 'Coma',
+	dash: 'Guión',
+	period: 'Punto',
+	forwardSlash: 'Barra inclinada',
+	graveAccent: 'Acento grave',
+	openBracket: 'Abrir corchete',
+	backSlash: 'Barra invertida',
+	closeBracket: 'Pechar corchete',
+	singleQuote: 'Comiña simple'
 } );

@@ -1,11 +1,12 @@
 ﻿/*
-Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 CKEDITOR.plugins.setLang( 'image2', 'hi', {
 	alt: 'वैकल्पिक टेक्स्ट',
 	btnUpload: 'इसे सर्वर को भेजें',
 	captioned: 'Captioned image', // MISSING
+	captionPlaceholder: 'Caption', // MISSING
 	infoTab: 'तस्वीर की जानकारी',
 	lockRatio: 'लॉक अनुपात',
 	menu: 'तस्वीर प्रॉपर्टीज़',
