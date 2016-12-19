@@ -109,7 +109,7 @@
 					// |   +------------------ Editor -+   |
 					// |   |                           |   |
 					//
-					if ( spaceHeight + dockedOffsetY <= editorRect.top )
+					if ( spaceHeight + dockedOffsetY + pinnedOffsetY <= editorRect.top )
 						changeMode( 'top' );
 
 					//     +- - - - - - - - -  Editor -+
